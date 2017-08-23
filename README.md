@@ -6,6 +6,8 @@ Despite its name, CountUp can count in either direction, depending on the `start
 
 ### [Try the demo](http://inorganik.github.io/countUp.js)
 
+npm package: `countup.js-angular2`
+
 ## See Also
 
 - **[CountUp.js repo](https://github.com/inorganik/countUp.js)**
