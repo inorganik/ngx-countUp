@@ -69,7 +69,6 @@ var CountUpDirective = (function () {
         dur = Number(dur) || 2;
         dec = Number(dec) || 0;
         // construct countUp
-        debugger;
         var /** @type {?} */ countUp = new CountUp(this.el.nativeElement, sta, end, dec, dur, this.options);
         if (end > 999) {
             // make easing smoother for large numbers

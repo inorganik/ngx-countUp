@@ -1,4 +1,4 @@
-import { CountUpDirective } from './count-up.directive';
+import { CountUpDirective } from './countUp.directive';
 
 describe('CountUpDirective', () => {
   it('should create an instance', () => {

@@ -38,6 +38,9 @@
       "entryFile": "index.ts",
       "umdModuleIds": {
         "countup.js": "CountUp"
+      },
+      "externals": {
+        "countup.js": "CountUp"
       }
     }
   }
