@@ -1,7 +1,4 @@
 {
-  "files": [
-    "countUp.module.ts"
-  ],
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
