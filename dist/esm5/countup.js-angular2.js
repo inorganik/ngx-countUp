@@ -5,7 +5,7 @@ import * as CountUp from 'countup.js';
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var CountUpDirective = (function () {
+var CountUpDirective = /** @class */ (function () {
     /**
      * @param {?} el
      */
@@ -113,7 +113,7 @@ CountUpDirective.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var CountUpModule = (function () {
+var CountUpModule = /** @class */ (function () {
     function CountUpModule() {
     }
     return CountUpModule;

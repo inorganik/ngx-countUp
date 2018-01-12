@@ -1,10 +1,9 @@
 {
   "name": "countup.js-angular2",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Animates a numerical value by counting to it.",
   "main": "dist/bundles/countup.js-angular2.umd.js",
   "scripts": {
-    "test": "ng test",
     "build": "ng-packagr -p package.json && rm dist/package.json && rm dist/README.md"
   },
   "repository": {
@@ -23,15 +22,29 @@
   },
   "homepage": "http://inorganik.github.io/countUp.js",
   "dependencies": {
-    "@angular/compiler": "^5.0.0",
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/common": "^4.2.4",
-    "@angular/core": "^4.2.4",
     "countup.js": "^1.9.3"
   },
   "devDependencies": {
+    "@angular/common": "^5.1.0",
+    "@angular/cli": "1.6.4",
+    "@angular/compiler": "^5.1.0",
+    "@angular/compiler-cli": "^5.1.0",
+    "@angular/core": "^5.1.0",
+    "rxjs": "^5.5.0",
+    "zone.js": "^0.8.4",
+    "typescript": "~2.5.3",
     "ng-packagr": "2.0.0-rc.9",
-    "typescript": "~2.4"
+    "tsickle": ">=0.24.0 <0.26"
+  },
+  "peerDependencies": {
+    "core-js": "^2.4.1",
+    "@angular/compiler-cli": "^5.0.0",
+    "@types/jasmine": "~2.8.3",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "^4.0.1",
+    "ts-node": "~3.2.0",
+    "tslint": "~5.9.1"
   },
   "ngPackage": {
     "lib": {
