@@ -1,19 +1,20 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "module": "umd",
-    "moduleResolution": "node",
-    "removeComments": true,
-    "sourceMap": true,
-    "outDir": "dist",
-    "declaration": true,
     "typeRoots": [
       "node_modules/@types"
     ],
-    "types" : [
-      "core-js"
+    "lib": [
+      "es2017",
+      "dom"
     ]
   }
 }

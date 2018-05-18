@@ -6,6 +6,7 @@ import * as CountUp from 'countup.js';
 })
 export class CountUpDirective implements AfterViewInit {
 
+  countUp: any;
   /**
    * Optional extra configuration, such as easing.
    */
@@ -76,23 +77,28 @@ export class CountUpDirective implements AfterViewInit {
     }
   }
 
-  private countUp;
-
   constructor(private el: ElementRef) {}
 
   private createCountUp(sta, end, dec, dur) {
     sta = sta || 0;
-    if (isNaN(sta)) sta = Number(sta.match(/[\d\-\.]+/g).join('')); // strip non-numerical characters
+    // strip non-numerical characters
+    if (isNaN(sta)) {
+      sta = Number(sta.match(/[\d\-\.]+/g).join(''));
+    }
     end = end || 0;
-    if (isNaN(end)) end = Number(end.match(/[\d\-\.]+/g).join('')); // strip non-numerical characters
+    if (isNaN(end)) {
+      end = Number(end.match(/[\d\-\.]+/g).join(''));
+    }
     dur = Number(dur) || 2;
     dec = Number(dec) || 0;
 
     // construct countUp
     let countUp = new CountUp(this.el.nativeElement, sta, end, dec, dur, this.options);
-    if (end > 999) {
-      // make easing smoother for large numbers
-      countUp = new CountUp(this.el.nativeElement, sta, end - 100, dec, dur / 2, this.options);
+    const diff = Math.abs(end - sta);
+    const up = (end > sta) ? 1 : -1;
+    // make easing smoother for large numbers
+    if (diff > 999) {
+      countUp = new CountUp(this.el.nativeElement, sta, end + (up * 100), dec, dur / 2, this.options);
     }
 
     return countUp;
