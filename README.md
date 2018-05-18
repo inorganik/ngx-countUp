@@ -2,14 +2,14 @@
 
 This is an Angular directive wrapper around the core functionality of CountUp which is maintained in the [CountUp.js repo](https://github.com/inorganik/countUp.js).
 
-#### [Try the demo](http://inorganik.github.io/countUp.js)
-
+#### [CountUp.js demo](http://inorganik.github.io/countUp.js)
+Or see this angular version work by cloning this project and running `ng serve`.
 
 ## Usage
 
 Install the package in your project:
 
-`yarn add countup.js-angular2` or `npm install countup.js-angular2 --save`
+`yarn add countup.js-angular2` or `npm i countup.js-angular2 --save`
 
 In `app.module.ts`, import the module:
 ```ts
@@ -49,7 +49,14 @@ The CountUp directive accepts the following attribute values:
 
 ## Contributing <a name="contributing"></a>
 
-Before you make a pull request, please be sure to follow these super simple instructions:
+Before you make a pull request, please follow these instructions:
 
-1. Make your edits to `countUp.directive.ts` in the root directory.
-2. Run `yarn build`. That's it!
+1. Make your edits to `./src/app/countup/countup.directive.ts`.
+1. Run the linter: `ng lint`.
+1. Test your changes by running the angular shell app: `ng s`.
+
+If everything looks good, you can stop here and make a pull request. 
+I will publish the package after merge, here are the steps (for reference):
+
+1. Run `yarn packagr`.
+
