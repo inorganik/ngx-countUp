@@ -56,7 +56,12 @@ Before you make a pull request, please follow these instructions:
 1. Test your changes by running the angular shell app: `ng s`.
 
 If everything looks good, you can stop here and make a pull request. 
-I will publish the package after merge, here are the steps (for reference):
+Here's how to test your changes in a package:
 
 1. Run `yarn packagr`.
+1. Pack: `cd dist && yarn pack`
+1. Copy the .tgz file into the root of an angular test application.
+1. From the test app, install your tarball: `yarn add ./path/to/tarball.tgz`
+1. Follow usage instructions above and test functionality.
+1. Test prod build: `ng serve --prod`
 
