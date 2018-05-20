@@ -1,6 +1,6 @@
 {
-  "name": "countup-shell",
-  "version": "0.0.0",
+  "name": "countUp.js-angular2",
+  "version": "1.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -53,7 +53,10 @@
     "whitelistedNonPeerDependencies": ["."],
     "ngPackage": {
       "lib": {
-        "entryFile": "./public_api.ts"
+        "entryFile": "./public_api.ts",
+        "externals": {
+          "countup.js": "CountUp"
+        }
       }
     }
   }
