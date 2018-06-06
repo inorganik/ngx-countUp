@@ -4,5 +4,3 @@ npm-debug.log
 .DS_Store
 tasks.json
 yarn-error.log
-dist
-dist.tgz
