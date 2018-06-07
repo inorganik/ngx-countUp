@@ -95,9 +95,9 @@ export class CountUpDirective implements AfterViewInit {
     // construct countUp
     let countUp = new CountUp(this.el.nativeElement, sta, end, dec, dur, this.options);
     const diff = Math.abs(end - sta);
-    const up = (end > sta) ? 1 : -1;
     // make easing smoother for large numbers
     if (diff > 999) {
+      const up = (end > sta) ? -1 : 1;
       countUp = new CountUp(this.el.nativeElement, sta, end + (up * 100), dec, dur / 2, this.options);
     }
 
