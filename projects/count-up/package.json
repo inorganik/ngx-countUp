@@ -1,0 +1,27 @@
+{
+  "name": "countup.js-angular2",
+  "version": "6.0.2",
+  "description": "Animates a numerical value by counting to it.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inorganik/countUp.js-angular2.git"
+  },
+  "keywords": [
+    "UI",
+    "animation",
+    "angular"
+  ],
+  "author": "@inorganik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inorganik/countUp.js-angular2/issues"
+  },
+  "homepage": "http://inorganik.github.io/countUp.js",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "dependencies": {
+    "countup.js": "^1.9.3"
+  }
+}

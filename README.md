@@ -51,17 +51,9 @@ The CountUp directive accepts the following attribute values:
 
 Before you make a pull request, please follow these instructions:
 
-1. Make your edits to `./src/app/countup/countup.directive.ts`.
-1. Run the linter: `ng lint`.
-1. Test your changes by running the angular shell app: `ng s`.
-
-If everything looks good, you can stop here and make a pull request. 
-Here's how to test your changes in a package:
-
-1. Run `yarn packagr`.
-1. Pack: `cd dist && yarn pack`
-1. Copy the .tgz file into the root of an angular test application.
-1. From the test app, install your tarball: `yarn add ./path/to/tarball.tgz`
-1. Follow usage instructions above and test functionality.
-1. Test prod build: `ng serve --prod`
+1. Make your edits to `./projects/count-up/src/lib/count-up.directive.ts`.
+1. Run `yarn build:countup`.
+1. Pack: `cd dist/count-up && yarn pack`
+1. Install the tarball in the test app: `cd ../.. && yarn add file:./dist/count-up/countup.js-angular2-v6.0.2.tgz`
+1. Run the test app and make sure the demo works: `ng serve --prod`
 

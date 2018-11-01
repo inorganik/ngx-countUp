@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/count-up",
+  "whitelistedNonPeerDependencies": [
+    "countup.js"
+  ],
+  "lib": {
+    "entryFile": "src/public_api.ts",
+    "externals": {
+      "countup.js": "CountUp"
+    }
+  }
+}

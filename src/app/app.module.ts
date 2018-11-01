@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CountUpModule } from './countup/countup.module';
 import { FormsModule } from '@angular/forms';
+import { CountUpModule } from 'countup.js-angular2';
 
 @NgModule({
   declarations: [
