@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   pickANumber = 7890;
+  endVal: number;
+
+  doThisOnComplete() {
+    console.log('complete!');
+  }
 }

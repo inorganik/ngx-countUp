@@ -1,4 +1,5 @@
 <h3>CountUp.js - Angular Demo</h3>
-<h1 countUp [endVal]="pickANumber" [reanimateOnClick]="true">0</h1>
+<h1 countUp [endVal]="endVal" [reanimateOnClick]="true" (complete)="doThisOnComplete()">0</h1>
 <label>Change the end value:</label>
 <input type="text" [(ngModel)]="pickANumber" style="display:block">
+<button (click)="endVal = pickANumber">Apply</button>
