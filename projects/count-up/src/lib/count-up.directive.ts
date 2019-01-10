@@ -50,7 +50,6 @@ export class CountUpDirective implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.endVal && changes.endVal.currentValue) {
-      console.log('create countUp with endVal', this.endVal);
       this.countUp = this.createCountUp();
       this.animate();
     }

@@ -1,6 +1,6 @@
 {
   "name": "countup.js-angular2",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "Animates a numerical value by counting to it.",
   "repository": {
     "type": "git",
