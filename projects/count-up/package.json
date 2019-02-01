@@ -18,8 +18,8 @@
   },
   "homepage": "http://inorganik.github.io/countUp.js",
   "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0"
   },
   "dependencies": {
     "countup.js": "^1.9.3"
