@@ -15,9 +15,10 @@ import { CountUp, CountUpOptions } from 'countup.js';
 })
 export class CountUpDirective implements OnChanges {
 
-  countUp: any;
+  countUp: CountUp;
   // the value you want to count to
   @Input('countUp') endVal: number;
+
   @Input() options: CountUpOptions = {};
   @Input() reanimateOnClick = true;
   @Output() complete = new EventEmitter<void>();

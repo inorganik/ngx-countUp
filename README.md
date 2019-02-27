@@ -1,6 +1,6 @@
 # CountUp.js Angular ^2 Module
 
-This is an Angular directive wrapper around the core functionality of CountUp which is maintained in the [CountUp.js repo](https://github.com/inorganik/countUp.js).
+This is an Angular directive wrapper around the core functionality of CountUp which is maintained in the [CountUp.js repo](https://github.com/inorganik/countUp.js). MIT License.
 
 #### [CountUp.js demo](http://inorganik.github.io/countUp.js)
 Or see this angular version work by cloning this project and running `ng serve`.
@@ -26,24 +26,22 @@ import { CountUpModule } from 'countup.js-angular2';
 
 Use it in your markup. Since it's a directive, it can be added to any element:
 ```html
-<h1 countUp endVal="345">0</h1>
+<h1 [countUp]="345" (complete)="doSomethingOnComplete()">0</h1>
 ```
 
-You may want to bind the endVal to some property. Put brackets on the attribute and set the value to the property. This also allows you to defer the animation - it won't start until `endVal` has a value.
+#### Defer animation
+Bind the endVal to some property. Leave it undefined and the animation won't start until `endVal` has a value.
 ```html
-<h1 countUp [endVal]="myEndVal" (complete)="doSomethingOnComplete()">0</h1>
+<h1 [countUp]="myEndVal" [options]="myOpts">0</h1>
 ```
+
 Inputs:
-- `startVal`: number to start at
-- `endVal`: number to count to
-- `duration`: duration of counting animation in seconds
-- `decimals`: formatted to this many decimal places
-- `reanimateOnClick`: pass true to enable
-- `countUp`: options object passed directly to the directive attribute selector. More about options in the [CountUp.js repo](https://github.com/inorganik/countUp.js).
+- `countUp`: number to count to
+- `options`: [CountUpOptions](https://github.com/inorganik/countUp.js#options) - fine-grain control over CountUp
+- `reanimateOnClick`: pass false to disable (defaults to true)
 
 Outputs:
 - `complete`: emits when the animation completes
-
 
 ## Contributing <a name="contributing"></a>
 
@@ -57,3 +55,4 @@ Before you make a pull request, please follow these instructions:
 1. Remove the tarball package by running `yarn reset:countup` before committing.
 1. Commit and push.
 
+Note for myself: To publish make sure tarball has latest version name and run `npm publish dist/count-up`
