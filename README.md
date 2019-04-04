@@ -48,11 +48,15 @@ Outputs:
 Before you make a pull request, please follow these instructions:
 
 1. Make your edits to `./projects/count-up/src/lib/count-up.directive.ts`.
+1. Run `ng s` and test your changes in the demo app.
+
+Publishing (you don't need to do this, it&rsquo;s for my own reference):
+
 1. Increment the version number if necessary (and `install-tarball` script).
+1. Commit changes.
 1. Run `yarn package:countup` which builds and packs a tarball.
 1. Install the tarball in the test app: `yarn install-tarball`.
-1. Run the test app and make sure the demo works: `ng serve --prod`.
-1. Remove the tarball package by running `yarn reset:countup` before committing.
-1. Commit and push.
-
-Note for myself: To publish make sure tarball has latest version name and run `npm publish dist/count-up`
+1. Make app.module import from newly installed package.
+1. Run the test app with AOT compiler and make sure the demo works: `ng serve --prod`.
+1. Run `npm publish dist/count-up`
+1. Discard changes.
