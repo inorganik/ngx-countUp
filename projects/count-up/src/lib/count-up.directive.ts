@@ -18,6 +18,9 @@ export class CountUpDirective implements OnChanges {
   countUp: CountUp;
   // the value you want to count to
   @Input('countUp') endVal: number;
+  // previous end val enables us to count from last endVal
+  // when endVal is changed
+  previousEndVal: number;
 
   @Input() options: CountUpOptions = {};
   @Input() reanimateOnClick = true;
@@ -34,9 +37,16 @@ export class CountUpDirective implements OnChanges {
   constructor(private el: ElementRef) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.endVal && changes.endVal.currentValue) {
-      this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
+    if (changes.endVal && !changes.endVal.firstChange) {
+      if (this.previousEndVal != undefined) {
+        this.options = {
+          ...this.options,
+          startVal: this.previousEndVal
+        };
+      }
+      this.countUp = new CountUp(this.el.nativeElement, this.endVal,this.options);
       this.animate();
+      this.previousEndVal = this.endVal;
     }
   }
 

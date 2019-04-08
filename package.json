@@ -9,7 +9,7 @@
     "build:countup": "ng-packagr -p projects/count-up/ng-package.json",
     "pack:countup": "cd dist/count-up && yarn pack && cd ../..",
     "package:countup": "yarn build:countup && yarn pack:countup",
-    "install-tarball": "yarn add file:./dist/count-up/countup.js-angular2-v7.0.0.tgz",
+    "install-tarball": "yarn add file:./dist/count-up/countup.js-angular2-v7.1.0.tgz",
     "all": "yarn package:countup && yarn install-tarball",
     "reset:countup": "yarn remove countup.js-angular2",
     "test": "ng test",

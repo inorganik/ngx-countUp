@@ -15,8 +15,9 @@ export class AppComponent {
   }
 
   applyEndVal() {
-    this.endVal = 0;
-    setTimeout(() => this.endVal = this.pickANumber);
+    // this.endVal = null;
+    // setTimeout(() => this.endVal = Number(this.pickANumber));
+    this.endVal = Number(this.pickANumber)
   }
 
   useOptions() {
