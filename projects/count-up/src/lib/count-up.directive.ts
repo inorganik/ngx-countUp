@@ -6,14 +6,15 @@ import {
   HostListener,
   EventEmitter,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
+  AfterViewInit,
 } from '@angular/core';
 import { CountUp, CountUpOptions } from 'countup.js';
 
 @Directive({
   selector: '[countUp]'
 })
-export class CountUpDirective implements OnChanges {
+export class CountUpDirective implements OnChanges, AfterViewInit {
 
   countUp: CountUp;
   // the value you want to count to
@@ -36,6 +37,14 @@ export class CountUpDirective implements OnChanges {
 
   constructor(private el: ElementRef) {}
 
+  ngAfterViewInit() {
+    if (this.endVal) {
+      this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
+      this.animate();
+      this.previousEndVal = this.endVal;
+    }
+  }
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes.endVal && !changes.endVal.firstChange) {
       if (this.previousEndVal != undefined) {
@@ -44,7 +53,7 @@ export class CountUpDirective implements OnChanges {
           startVal: this.previousEndVal
         };
       }
-      this.countUp = new CountUp(this.el.nativeElement, this.endVal,this.options);
+      this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
       this.animate();
       this.previousEndVal = this.endVal;
     }
