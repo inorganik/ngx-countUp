@@ -23,6 +23,8 @@ export class CountUpDirective implements OnChanges, AfterViewInit {
   // when endVal is changed
   previousEndVal: number;
 
+  @Input() autoStart: boolean;
+  // When endVal is exist, and autoStart is true, the countUp works (In ngAfterViewInit)
   @Input() options: CountUpOptions = {};
   @Input() reanimateOnClick = true;
   @Output() complete = new EventEmitter<void>();
@@ -38,7 +40,7 @@ export class CountUpDirective implements OnChanges, AfterViewInit {
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit() {
-    if (this.endVal) {
+    if (this.endVal && this.autoStart) {
       this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
       this.animate();
       this.previousEndVal = this.endVal;
