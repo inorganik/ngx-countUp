@@ -7,7 +7,7 @@ import { CountUpOptions } from 'countup.js';
 })
 export class AppComponent {
   pickANumber = 7890;
-  endVal: number;
+  endVal = 100;
   opts: CountUpOptions;
 
   doThisOnComplete() {
@@ -17,7 +17,7 @@ export class AppComponent {
   applyEndVal() {
     // this.endVal = null;
     // setTimeout(() => this.endVal = Number(this.pickANumber));
-    this.endVal = Number(this.pickANumber)
+    this.endVal = Number(this.pickANumber);
   }
 
   useOptions() {

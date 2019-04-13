@@ -37,14 +37,14 @@ export class CountUpDirective implements OnChanges {
   constructor(private el: ElementRef) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.endVal && !changes.endVal.firstChange) {
-      if (this.previousEndVal != undefined) {
+    if (changes.endVal && changes.endVal.currentValue !== undefined) {
+      if (this.previousEndVal !== undefined) {
         this.options = {
           ...this.options,
           startVal: this.previousEndVal
         };
       }
-      this.countUp = new CountUp(this.el.nativeElement, this.endVal,this.options);
+      this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
       this.animate();
       this.previousEndVal = this.endVal;
     }
