@@ -43,6 +43,31 @@ Inputs:
 Outputs:
 - `complete`: emits when the animation completes
 
+## Testing
+
+The test app in this repo has a passing test for a component that uses the CountUp directive, which you can use as an example.  If your component uses the CountUp directive, include the CountUpModule in your TestBed:
+
+```
+beforeEach(async(() => {
+  TestBed.configureTestingModule({
+    imports: [
+      CountUpModule,
+      ...
+    ],
+    ...
+  })
+});
+```
+
+For Jest, make sure you have the following in your jest.config.js:
+
+```
+transform: {
+  '^.+\\.(js|ts|tsx)$': 'ts-jest'
+},
+transformIgnorePatterns: ['node_modules/(?!countup.js)']
+```
+
 ## Contributing <a name="contributing"></a>
 
 Before you make a pull request, please follow these instructions:

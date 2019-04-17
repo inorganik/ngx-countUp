@@ -5,10 +5,10 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "module": "commonjs"
   },
   "files": [
-    "test.ts",
     "polyfills.ts"
   ],
   "include": [
