@@ -59,13 +59,17 @@ beforeEach(async(() => {
 });
 ```
 
-For Jest, make sure you have the following in your jest.config.js:
+For Jest, I used [jest-preset-angular](https://github.com/thymikee/jest-preset-angular). Make sure you have the following in your jest.config.js:
 
 ```
 transform: {
   '^.+\\.(js|ts|tsx)$': 'ts-jest'
 },
 transformIgnorePatterns: ['node_modules/(?!countup.js)']
+```
+And make sure you add this under `compilerOptions` in your root tsconfig.json:
+```
+"allowJs": true,
 ```
 
 ## Contributing <a name="contributing"></a>
