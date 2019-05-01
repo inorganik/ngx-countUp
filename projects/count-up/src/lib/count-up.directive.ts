@@ -6,7 +6,8 @@ import {
   HostListener,
   EventEmitter,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
+  NgZone
 } from '@angular/core';
 import { CountUp, CountUpOptions } from 'countup.js';
 
@@ -34,7 +35,7 @@ export class CountUpDirective implements OnChanges {
     }
   }
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private zone: NgZone) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.endVal && changes.endVal.currentValue !== undefined) {
@@ -51,9 +52,13 @@ export class CountUpDirective implements OnChanges {
   }
 
   private animate() {
-    this.countUp.reset();
-    this.countUp.start(() => {
-      this.complete.emit();
+    this.zone.runOutsideAngular(() => {
+      this.countUp.reset();
+      this.countUp.start(() => {
+        this.zone.run(() => {
+          this.complete.emit();
+        });
+      });
     });
   }
 }

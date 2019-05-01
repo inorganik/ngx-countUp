@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CountUpModule } from '../../projects/count-up/src/lib/count-up.module';
+import { DebugChangeDetectionComponent } from './debug-change-detection.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DebugChangeDetectionComponent
   ],
   imports: [
     BrowserModule,
