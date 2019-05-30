@@ -9,7 +9,7 @@
     "build:countup": "ng-packagr -p projects/count-up/ng-package.json",
     "pack:countup": "cd dist/count-up && yarn pack && cd ../..",
     "package:countup": "yarn build:countup && yarn pack:countup",
-    "install-tarball": "yarn add file:./dist/count-up/countup.js-angular2-v7.3.0.tgz",
+    "install-tarball": "npm i ./dist/count-up/countup.js-angular2-v7.3.0.tgz",
     "all": "yarn package:countup && yarn install-tarball",
     "reset:countup": "yarn remove countup.js-angular2",
     "test": "jest",
@@ -31,6 +31,7 @@
     "@briebug/jest-schematic": "^1.6.0",
     "core-js": "^2.5.7",
     "countup.js": "^2.0.4",
+    "countup.js-angular2": "file:dist/count-up/countup.js-angular2-v7.3.0.tgz",
     "rxjs": "~6.5.2",
     "zone.js": "~0.9.1"
   },
