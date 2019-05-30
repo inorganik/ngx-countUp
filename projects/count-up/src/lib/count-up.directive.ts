@@ -7,9 +7,10 @@ import {
   EventEmitter,
   OnChanges,
   SimpleChanges,
-  NgZone
+  NgZone, Inject, PLATFORM_ID
 } from '@angular/core';
 import { CountUp, CountUpOptions } from 'countup.js';
+import {isPlatformBrowser} from '@angular/common';
 
 @Directive({
   selector: '[countUp]'
@@ -35,9 +36,13 @@ export class CountUpDirective implements OnChanges {
     }
   }
 
-  constructor(private el: ElementRef, private zone: NgZone) {}
+  constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object, private zone: NgZone) {}
 
   ngOnChanges(changes: SimpleChanges) {
+    // we don't need to animate anything on the server since nobody is there to see it
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     if (changes.endVal && changes.endVal.currentValue !== undefined) {
       if (this.previousEndVal !== undefined) {
         this.options = {
