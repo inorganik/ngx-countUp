@@ -36,10 +36,14 @@ export class CountUpDirective implements OnChanges {
     }
   }
 
-  constructor(private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object, private zone: NgZone) {}
+  constructor(
+    private el: ElementRef,
+    private zone: NgZone,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    // we don't need to animate anything on the server since nobody is there to see it
+    // don't animate server-side (universal)
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
