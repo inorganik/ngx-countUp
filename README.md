@@ -29,6 +29,8 @@ Use it in your markup. Since it's a directive, it can be added to any element:
 <h1 [countUp]="345" (complete)="doSomethingOnComplete()">0</h1>
 ```
 
+See below for additional [Ionic 4 usage instructions](#ionic-4-usage).
+
 #### Defer animation
 Bind the endVal to some property. Leave it undefined and the animation won't start until `endVal` has a value.
 ```html
@@ -42,6 +44,25 @@ Inputs:
 
 Outputs:
 - `complete`: emits when the animation completes
+
+#### Ionic 4 usage
+
+Ionic 4 uses lazy loading. This means that each page is also a module.
+
+If you are using it with Ionic Framework you will need to import the module at the page level as well. 
+
+Follow the [usage guide](#usage) above, and then in `(pagename).module.ts`, also import the module:
+```ts
+import { CountUpModule } from 'countup.js-angular2';
+
+@NgModule({
+  imports: [
+    ...
+    CountUpModule
+  ],
+  ...
+})
+```
 
 ## Testing
 
