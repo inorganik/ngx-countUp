@@ -11,7 +11,7 @@
 ```
 Angular:
 Angular CLI:
-countup.js-angular2: 
+ngx-countup: 
 ```
 
 #### Description

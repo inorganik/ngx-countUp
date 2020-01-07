@@ -5,9 +5,6 @@
     "countup.js"
   ],
   "lib": {
-    "entryFile": "src/public_api.ts",
-    "externals": {
-      "countup.js": "CountUp"
-    }
+    "entryFile": "src/public_api.ts"
   }
 }

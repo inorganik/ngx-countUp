@@ -9,11 +9,11 @@ Or see this angular version work by cloning this project and running `ng serve`.
 
 Install the package in your project:
 
-`yarn add countup.js-angular2` or `npm i countup.js-angular2`
+`yarn add ngx-countup` or `npm i ngx-countup`
 
 In `app.module.ts`, import the module:
 ```ts
-import { CountUpModule } from 'countup.js-angular2';
+import { CountUpModule } from 'ngx-countup';
 
 @NgModule({
   imports: [
