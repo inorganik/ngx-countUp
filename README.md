@@ -1,9 +1,17 @@
-# CountUp.js Angular ^2 Module
+# ngx-countup - CountUp.js in Angular
 
 This is an Angular directive wrapper around the core functionality of CountUp which is maintained in the [CountUp.js repo](https://github.com/inorganik/countUp.js). MIT License.
 
 #### [CountUp.js demo](http://inorganik.github.io/countUp.js)
 Or see this angular version work by cloning this project and running `ng serve`.
+
+This module supports Angular 7 and 8. The CountUp module for Angular 1.x is [here](https://github.com/inorganik/countUp.js-angular1).
+
+Contents:
+- [Usage](#usage)
+- [Angular Universal](#angular-universal)
+- [Testing](#testing)
+- [Contributing](#contributing)
 
 ## Usage
 
@@ -43,6 +51,13 @@ Inputs:
 Outputs:
 - `complete`: emits when the animation completes
 
+## Angular Universal
+
+Yes, this component works with SSR and prerendering!
+
+Check out this separate [SSR demo repo](https://github.com/inorganik/ngx-countup-with-ssr) for a working example.
+
+
 ## Testing
 
 The test app in this repo has a passing test for a component that uses the CountUp directive, which you can use as an example.  If your component uses the CountUp directive, include the CountUpModule in your TestBed:
@@ -72,7 +87,7 @@ And make sure you add this under `compilerOptions` in your root tsconfig.json:
 "allowJs": true,
 ```
 
-## Contributing <a name="contributing"></a>
+## Contributing
 
 Before you make a pull request, please follow these instructions:
 
