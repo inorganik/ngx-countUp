@@ -5,7 +5,7 @@ This is an Angular directive wrapper around the core functionality of CountUp wh
 #### [CountUp.js demo](http://inorganik.github.io/countUp.js)
 Or see this angular version work by cloning this project and running `ng serve`.
 
-This module supports Angular 7 and 8. The CountUp module for Angular 1.x is [here](https://github.com/inorganik/countUp.js-angular1).
+This module supports Angular 7 through 10. The CountUp module for Angular 1.x is [here](https://github.com/inorganik/countUp.js-angular1).
 
 Contents:
 - [Usage](#usage)
