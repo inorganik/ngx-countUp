@@ -9,7 +9,7 @@
     "build:countup": "ng-packagr -p projects/count-up/ng-package.json",
     "pack:countup": "cd dist/count-up && yarn pack && cd ../..",
     "package:countup": "yarn build:countup && yarn pack:countup",
-    "install-tarball": "npm i ./dist/count-up/ngx-countUp-v7.3.0.tgz",
+    "install-tarball": "npm i ./dist/count-up/ngx-countUp-v7.3.1.tgz",
     "all": "yarn package:countup && yarn install-tarball",
     "reset:countup": "yarn remove ngx-countUp",
     "test": "jest",
