@@ -17,7 +17,7 @@ import {isPlatformBrowser} from '@angular/common';
 })
 export class CountUpDirective implements OnChanges {
 
-  countUp: CountUp;
+  countUp: CountUp = null;
   // the value you want to count to
   @Input('countUp') endVal: number;
   // previous end val enables us to count from last endVal
@@ -42,17 +42,18 @@ export class CountUpDirective implements OnChanges {
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     // don't animate server-side (universal)
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
     if (changes.endVal && changes.endVal.currentValue !== undefined) {
-      if (this.previousEndVal !== undefined) {
+      if (this.countUp !== null) {
         this.options = {
           ...this.options,
-          startVal: this.previousEndVal
+          startVal: this.countUp.frameVal
         };
+        this.countUp.pauseResume();
       }
       this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
       this.animate();
