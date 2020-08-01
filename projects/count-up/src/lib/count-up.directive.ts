@@ -10,6 +10,7 @@ import {
   NgZone, Inject, PLATFORM_ID
 } from '@angular/core';
 import { CountUp, CountUpOptions } from 'countup.js';
+import * as countUpModule from 'countup.js/dist/countup.umd.js';
 import {isPlatformBrowser} from '@angular/common';
 
 @Directive({
@@ -54,7 +55,7 @@ export class CountUpDirective implements OnChanges {
           startVal: this.previousEndVal
         };
       }
-      this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
+      this.countUp = new countUpModule.CountUp(this.el.nativeElement, this.endVal, this.options);
       this.animate();
       this.previousEndVal = this.endVal;
     }
