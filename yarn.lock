@@ -2536,9 +2536,9 @@ cosmiconfig@^5.0.0:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-countup.js@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.0.6.tgz#3696046e787c08b16cee811710deb030576a3aa0"
+countup.js@^2.0.1, countup.js@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.0.4.tgz#8c845452e499b16187c0d1beb1e5d717bda90005"
 
 create-ecdh@^4.0.0:
   version "4.0.3"
@@ -5434,6 +5434,13 @@ ng-packagr@^5.4.0:
     stylus "^0.54.5"
     terser "^4.1.2"
     update-notifier "^3.0.0"
+
+ngx-countup@^7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/ngx-countup/-/ngx-countup-7.3.0.tgz#44271d0aa894c9b920b8d5c8e590dd14a6c362fa"
+  dependencies:
+    countup.js "^2.0.1"
+    tslib "^1.9.0"
 
 nice-try@^1.0.4:
   version "1.0.5"

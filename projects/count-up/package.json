@@ -1,6 +1,6 @@
 {
   "name": "ngx-countup",
-  "version": "7.3.2",
+  "version": "7.3.1",
   "description": "Animates a numerical value by counting to it.",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "@angular/core": ">=7.0.0"
   },
   "dependencies": {
-    "countup.js": "^2.0.6"
+    "countup.js": "^2.0.5"
   },
   "devDependencies": {}
 }
