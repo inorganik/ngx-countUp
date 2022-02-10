@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { CountUpModule } from 'ngx-countup';
 import { FormsModule } from '@angular/forms';
@@ -7,17 +7,18 @@ import { DebugChangeDetectionComponent } from './debug-change-detection.componen
 describe('AppComponent', () => {
   let component, fixture;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
+    imports: [
         FormsModule,
         CountUpModule,
-      ],
-      declarations: [
+    ],
+    declarations: [
         AppComponent,
         DebugChangeDetectionComponent
-      ],
-    }).compileComponents();
+    ],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
