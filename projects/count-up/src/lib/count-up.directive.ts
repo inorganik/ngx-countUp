@@ -26,6 +26,7 @@ export class CountUpDirective implements OnChanges {
 
   @Input() options: CountUpOptions = {};
   @Input() reanimateOnClick = true;
+  // eslint-disable-next-line @angular-eslint/no-output-native
   @Output() complete = new EventEmitter<void>();
 
   // Re-animate if preference is set.

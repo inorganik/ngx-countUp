@@ -18,11 +18,12 @@
   },
   "homepage": "http://inorganik.github.io/countUp.js",
   "peerDependencies": {
-    "@angular/common": ">=7.0.0",
-    "@angular/core": ">=7.0.0"
+    "@angular/common": ">=13.0.0",
+    "@angular/core": ">=13.0.0"
   },
   "dependencies": {
-    "countup.js": "^2.0.5"
+    "countup.js": "^2.0.8",
+    "tslib": "^2.0.0"
   },
   "devDependencies": {}
 }
