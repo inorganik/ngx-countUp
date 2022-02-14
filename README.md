@@ -15,9 +15,15 @@ Contents:
 
 ## Usage
 
-Install the package in your project:
+Install the package in your project. For **Angular 13** and newer:
 
 `yarn add ngx-countup` or `npm i ngx-countup`
+
+If you are using an **older version of Angular**, use the following:
+
+`yarn add ngx-countup@7` or `npm i ngx-countup@7`
+
+---
 
 In `app.module.ts`, import the module:
 ```ts
@@ -38,7 +44,8 @@ Use it in your markup. Since it's a directive, it can be added to any element:
 ```
 
 #### Defer animation
-Bind the endVal to some property. Leave it undefined and the animation won't start until `endVal` has a value.
+
+Bind [countUp] to some property. Leave `endVal` undefined and the animation won't start until `endVal` has a value.
 ```html
 <h1 [countUp]="myEndVal" [options]="myOpts">0</h1>
 ```
