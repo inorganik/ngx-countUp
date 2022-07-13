@@ -58,6 +58,30 @@ Inputs:
 Outputs:
 - `complete`: emits when the animation completes
 
+#### Re-animate at will
+
+To re-animate the countUp when you want (maybe when some custom events take place or in setInterval for example), select the countUp and call the `animate()` function on it.
+
+Add a template ref variable to the markup (with #)
+
+```html
+<h1 #countUp [countUp]="myEndVal" [options]="myOpts">0</h1>
+```
+
+Then, select it with `@ViewChild` in your component's Typescript file (using the template ref # you created). 
+
+```ts
+  @ViewChild('countUp') countUp: CountUpDirective;
+```
+
+Finally, call the animate function where need be.
+
+```ts
+  this.countUp.animate();
+```
+
+Remember to do this inside `ngAfterViewInit()` if you are using something like setInterval on component load.
+
 ## Angular Universal
 
 Yes, this component works with SSR and prerendering!
