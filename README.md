@@ -137,6 +137,6 @@ Publishing (you don't need to do this, it&rsquo;s for my own reference):
 1. Run `npm run package:countup` which builds and packs a tarball.
 1. Install the tarball in the test app: `npm run install-tarball`.
 1. Make app.module import from newly installed package.
-1. Run the test app with AOT compiler and make sure the demo works: `ng serve --prod`.
+1. Run the test app with AOT compiler and make sure the demo works: `npm run serve:prod`.
 1. Run `npm publish dist/count-up`
 1. Discard changes.
