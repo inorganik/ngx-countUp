@@ -22,7 +22,7 @@
     "@angular/core": ">=13.0.0"
   },
   "dependencies": {
-    "countup.js": "^2.0.8",
+    "countup.js": "^2.3.2",
     "tslib": "^2.0.0"
   },
   "devDependencies": {}

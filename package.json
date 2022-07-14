@@ -27,7 +27,7 @@
     "@angular/platform-browser-dynamic": "~13.2.2",
     "@angular/router": "~13.2.2",
     "@briebug/jest-schematic": "^4.0.0",
-    "countup.js": "^2.0.8",
+    "countup.js": "^2.3.2",
     "ngx-countup": "^7.3.0",
     "rxjs": "~7.5.4",
     "tslib": "^2.0.0",

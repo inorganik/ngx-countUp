@@ -5,9 +5,9 @@ import { Component, NgZone } from '@angular/core';
   template: '<p class="number">{{check()}} zone checks</p>',
   styles: [`
         :host {
-          position: absolute;
-          left: 10px;
-          bottom: 0;
+          position: fixed;
+          right: 10px;
+          top: 0;
           display: block;
         }
         .number {

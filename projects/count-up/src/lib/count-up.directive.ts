@@ -20,9 +20,6 @@ export class CountUpDirective implements OnChanges {
   countUp: CountUp;
   // the value you want to count to
   @Input('countUp') endVal: number;
-  // previous end val enables us to count from last endVal
-  // when endVal is changed
-  previousEndVal: number;
 
   @Input() options: CountUpOptions = {};
   @Input() reanimateOnClick = true;
@@ -37,6 +34,9 @@ export class CountUpDirective implements OnChanges {
     }
   }
 
+  // previous end val enables us to count from last endVal when endVal is changed
+  previousEndVal: number;
+
   constructor(
     private el: ElementRef,
     private zone: NgZone,
@@ -48,16 +48,27 @@ export class CountUpDirective implements OnChanges {
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
-    if (changes.endVal && changes.endVal.currentValue !== undefined) {
+
+    const { options, endVal } = changes;
+    if (endVal?.currentValue !== undefined) {
       if (this.previousEndVal !== undefined) {
         this.options = {
           ...this.options,
           startVal: this.previousEndVal
         };
       }
-      this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
-      this.animate();
+      this.initAndRun();
       this.previousEndVal = this.endVal;
+    }
+    else if (options?.currentValue !== undefined) {
+      this.initAndRun();
+    }
+  }
+
+  initAndRun(): void {
+    this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
+    if (!this.options.enableScrollSpy) {
+      this.animate();
     }
   }
 
