@@ -72,7 +72,7 @@ export class CountUpDirective implements OnChanges {
     }
   }
 
-  private animate() {
+  animate() {
     this.zone.runOutsideAngular(() => {
       this.countUp.reset();
       this.countUp.start(() => {
