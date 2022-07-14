@@ -34,9 +34,6 @@ export class CountUpDirective implements OnChanges {
     }
   }
 
-  // previous end val enables us to count from last endVal when endVal is changed
-  previousEndVal: number;
-
   constructor(
     private el: ElementRef,
     private zone: NgZone,
@@ -51,14 +48,13 @@ export class CountUpDirective implements OnChanges {
 
     const { options, endVal } = changes;
     if (endVal?.currentValue !== undefined) {
-      if (this.previousEndVal !== undefined) {
-        this.options = {
-          ...this.options,
-          startVal: this.previousEndVal
-        };
+      if (this.countUp !== undefined) {
+        this.zone.runOutsideAngular(() => {
+          this.countUp.update(this.endVal);
+        });
+      } else {
+        this.initAndRun();
       }
-      this.previousEndVal = this.endVal;
-      this.initAndRun();
     }
     else if (options?.currentValue !== undefined) {
       this.initAndRun();

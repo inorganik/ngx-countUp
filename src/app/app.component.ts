@@ -14,7 +14,7 @@ import { CountUpOptions } from 'countup.js';
   ]
 })
 export class AppComponent {
-  pickANumber = 7890;
+  pickANumber = 500;
   endVal = 1000;
   endVal2 = 2000;
   opts: CountUpOptions = {
