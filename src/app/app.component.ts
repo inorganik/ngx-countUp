@@ -3,20 +3,29 @@ import { CountUpOptions } from 'countup.js';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styles: [
+    `.vertical-spacer {
+      height: 2500px;
+      width: 10px;
+      background: url(https://t3.ftcdn.net/jpg/03/41/31/88/360_F_341318810_iLrhXO8CD1mLSLIf7RkwXSahVuowqsgP.jpg)
+        1px 0;
+    }`
+  ]
 })
 export class AppComponent {
-  pickANumber = 7890;
-  endVal = 100;
-  opts: CountUpOptions;
+  pickANumber = 500;
+  endVal = 1000;
+  endVal2 = 2000;
+  opts: CountUpOptions = {
+    enableScrollSpy: true,
+  };
 
   doThisOnComplete() {
     console.log('complete!');
   }
 
   applyEndVal() {
-    // this.endVal = null;
-    // setTimeout(() => this.endVal = Number(this.pickANumber));
     this.endVal = Number(this.pickANumber);
   }
 
@@ -24,11 +33,13 @@ export class AppComponent {
     this.opts = {
       decimalPlaces: 2,
       separator: ':',
-      duration: 5
+      duration: 5,
     };
   }
 
-  unsetOptions() {
-    this.opts = null;
+  resetOptions() {
+    this.opts = {
+      enableScrollSpy: true,
+    };
   }
 }

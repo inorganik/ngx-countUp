@@ -1,8 +1,13 @@
-<h3>CountUp.js - Angular Demo</h3>
+<h1>CountUp Angular Demo</h1>
+<p>Scroll down...</p>
+
+<div class="vertical-spacer"></div>
 <h1 [countUp]="endVal" [options]="opts" (complete)="doThisOnComplete()">0</h1>
+<!-- <h1 [countUp]="endVal2" [options]="opts" (complete)="doThisOnComplete()">0</h1> -->
 <label>Set the end value:</label>
 <input type="text" [(ngModel)]="pickANumber" style="display:block">
 <button (click)="applyEndVal()">Apply</button>
-<button (click)="useOptions()">Use options</button>
-<button (click)="unsetOptions()">Unset options</button>
+<button (click)="useOptions()">Test options change</button>
+<button (click)="resetOptions()">Reset options</button>
+<div class="vertical-spacer"></div>
 <app-debug-change-detection></app-debug-change-detection>
