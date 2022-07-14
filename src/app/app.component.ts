@@ -26,8 +26,6 @@ export class AppComponent {
   }
 
   applyEndVal() {
-    // this.endVal = null;
-    // setTimeout(() => this.endVal = Number(this.pickANumber));
     this.endVal = Number(this.pickANumber);
   }
 
@@ -41,7 +39,7 @@ export class AppComponent {
 
   resetOptions() {
     this.opts = {
-      // enableScrollSpy: true,
+      enableScrollSpy: true,
     };
   }
 }

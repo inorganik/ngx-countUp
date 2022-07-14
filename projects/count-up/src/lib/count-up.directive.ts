@@ -43,7 +43,7 @@ export class CountUpDirective implements OnChanges {
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     // don't animate server-side (universal)
     if (!isPlatformBrowser(this.platformId)) {
       return;
@@ -57,22 +57,15 @@ export class CountUpDirective implements OnChanges {
           startVal: this.previousEndVal
         };
       }
-      this.initAndRun();
       this.previousEndVal = this.endVal;
+      this.initAndRun();
     }
     else if (options?.currentValue !== undefined) {
       this.initAndRun();
     }
   }
 
-  initAndRun(): void {
-    this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
-    if (!this.options.enableScrollSpy) {
-      this.animate();
-    }
-  }
-
-  animate() {
+  animate(): void {
     this.zone.runOutsideAngular(() => {
       this.countUp.reset();
       this.countUp.start(() => {
@@ -80,6 +73,15 @@ export class CountUpDirective implements OnChanges {
           this.complete.emit();
         });
       });
+    });
+  }
+
+  private initAndRun(): void {
+    this.zone.runOutsideAngular(() => {
+      this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
+      if (!this.options.enableScrollSpy) {
+        this.animate();
+      }
     });
   }
 }
