@@ -27,11 +27,8 @@
     "@angular/platform-browser": "^13.2.7",
     "@angular/platform-browser-dynamic": "^13.2.7",
     "@angular/router": "^13.2.7",
-    "@briebug/jest-schematic": "^4.0.0",
     "countup.js": "^2.3.2",
-    "ngx-countup": "file:dist/count-up/ngx-countup-13.1.0.tgz",
     "rxjs": "^7.5.7",
-    "tslib": "^2.4.1",
     "zone.js": "^0.11.8"
   },
   "devDependencies": {
