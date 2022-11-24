@@ -13,10 +13,10 @@
     "install-tarball": "npm i ./dist/count-up/ngx-countup-13.1.0.tgz",
     "all": "npm run package:countup && npm run install-tarball",
     "reset:countup": "npm remove ngx-countUp",
-    "test": "jest",
+    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test:watch": "jest --watch"
+    "test:watch": "ng test --watch"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +49,11 @@
     "eslint": "^8.28.0",
     "jasmine-core": "^4.0.1",
     "jasmine-spec-reporter": "~7.0.0",
+    "karma": "^6.4.1",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-coverage": "^2.2.0",
+    "karma-jasmine": "^5.1.0",
+    "karma-spec-reporter": "0.0.34",
     "ng-packagr": "^13.3.1",
     "protractor": "~7.0.0",
     "ts-node": "~10.5.0",
