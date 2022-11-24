@@ -91,8 +91,6 @@ Remember to do this inside `ngAfterViewInit()` to do something on component load
 
 Yes, this component works with SSR and prerendering!
 
-Check out this separate [SSR demo repo](https://github.com/inorganik/ngx-countup-with-ssr) for a working example.
-
 
 ## Testing
 
@@ -108,19 +106,6 @@ beforeEach(async(() => {
     ...
   })
 });
-```
-
-For Jest, I used [jest-preset-angular](https://github.com/thymikee/jest-preset-angular). Make sure you have the following in your jest.config.js:
-
-```
-transform: {
-  '^.+\\.(js|ts|tsx)$': 'ts-jest'
-},
-transformIgnorePatterns: ['node_modules/(?!countup.js)']
-```
-And make sure you add this under `compilerOptions` in your root tsconfig.json:
-```
-"allowJs": true,
 ```
 
 ## Contributing
