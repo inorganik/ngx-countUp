@@ -15,7 +15,6 @@
     "reset:countup": "npm remove ngx-countUp",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
     "test:watch": "ng test --watch"
   },
   "private": true,
@@ -55,7 +54,6 @@
     "karma-jasmine": "^5.1.0",
     "karma-spec-reporter": "0.0.34",
     "ng-packagr": "^13.3.1",
-    "protractor": "~7.0.0",
     "ts-node": "~10.5.0",
     "typescript": "~4.5.5"
   }
