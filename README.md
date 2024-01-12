@@ -25,7 +25,7 @@ If you are using an **older version of Angular**, use the following:
 
 ---
 
-In `app.module.ts`, import the module:
+In `app.module.ts`, import the module in your Angular module, or component if you are using standalone:
 ```ts
 import { CountUpModule } from 'ngx-countup';
 
@@ -79,7 +79,7 @@ Then, select it with `@ViewChild` in your component's Typescript file (using the
   @ViewChild('countUp') countUp: CountUpDirective;
 ```
 
-Finally, call the animate function where need be.
+Finally, call the animate function where needed.
 
 ```ts
   this.countUp.animate();
