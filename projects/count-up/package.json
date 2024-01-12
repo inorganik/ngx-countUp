@@ -24,6 +24,5 @@
   "dependencies": {
     "countup.js": "^2.3.2",
     "tslib": "^2.0.0"
-  },
-  "devDependencies": {}
+  }
 }
