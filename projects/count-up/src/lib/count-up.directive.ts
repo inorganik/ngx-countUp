@@ -55,9 +55,21 @@ export class CountUpDirective implements OnChanges {
       } else {
         this.initAndRun();
       }
-    }
-    else if (options?.currentValue !== undefined) {
-      this.initAndRun();
+    } else if (options?.currentValue !== undefined) {
+      if (!options.currentValue.disableReanimateOnOptionsChange) {
+        this.initAndRun();
+      } else {
+        // Update the existing CountUp instance with the new options, but don't re-render
+        if (this.countUp !== undefined) {
+          this.zone.runOutsideAngular(() => {
+            this.countUp.options = {
+              ...this.countUp.options,
+              ...options.currentValue,
+            };
+          });
+        }
+        this.options = options.currentValue;
+      }
     }
   }
 
