@@ -34,7 +34,6 @@ export class AppComponent {
       decimalPlaces: 2,
       separator: ':',
       duration: 5,
-      disableReanimateOnOptionsChange: true
     };
   }
 
