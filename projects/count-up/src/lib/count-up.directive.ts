@@ -48,13 +48,18 @@ export class CountUpDirective implements OnChanges {
   
     const { options, endVal } = changes;
   
-    if (endVal?.currentValue !== undefined || options?.currentValue !== undefined) {
-      if (this.countUp !== undefined) {
-        this.zone.runOutsideAngular(() => {
+    if (this.countUp !== undefined) {
+      this.zone.runOutsideAngular(() => {
+        if (endVal?.currentValue !== undefined) {
+          this.countUp.update(this.endVal);
+        }
+        if (options?.currentValue !== undefined) {
           this.countUp.reset();
           this.countUp = undefined;
-        });
-      }
+          this.initAndRun();
+        }
+      });
+    } else {
       this.initAndRun();
     }
   }
