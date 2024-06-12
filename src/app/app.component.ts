@@ -37,6 +37,16 @@ export class AppComponent {
     };
   }
 
+  useOptionsAndEndVal() {
+    this.opts = {
+      decimalPlaces: 1,
+      separator: ',',
+      duration: 3,
+      suffix: " Set options and endVal simultaneously!"
+    };
+    this.endVal = 10000
+  }
+
   resetOptions() {
     this.opts = {
       enableScrollSpy: true,
