@@ -42,7 +42,8 @@ export class AppComponent {
       decimalPlaces: 1,
       separator: ',',
       duration: 3,
-      suffix: " Set options and endVal simultaneously!"
+      suffix: " Set options and endVal simultaneously!",
+      startVal: this.endVal
     };
     this.endVal = 10000
   }
