@@ -54,8 +54,6 @@ export class CountUpDirective implements OnChanges {
           this.countUp.update(this.endVal);
         }
         if (options?.currentValue !== undefined) {
-          this.countUp.reset();
-          this.countUp = undefined;
           this.initAndRun();
         }
       });
