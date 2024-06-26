@@ -39,7 +39,7 @@ export class CountUpDirective implements OnChanges {
     private zone: NgZone,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
-
+  
   ngOnChanges(changes: SimpleChanges): void {
     // don't animate server-side (universal)
     if (!isPlatformBrowser(this.platformId)) {
@@ -48,20 +48,25 @@ export class CountUpDirective implements OnChanges {
   
     const { options, endVal } = changes;
   
-    if (this.countUp !== undefined) {
-      this.zone.runOutsideAngular(() => {
-        if (endVal?.currentValue !== undefined) {
-          this.countUp.update(this.endVal);
-        }
+    if (this.countUp) {
+      if (options?.currentValue !== undefined || endVal?.currentValue !== undefined) {
+        // If options have changed, reinitialize
         if (options?.currentValue !== undefined) {
           this.initAndRun();
+        } else {
+          // Only endVal has changed, update with current options
+          if (!this.options.startVal) {
+            this.options.startVal = this.countUp.frameVal;
+          }
+          this.zone.runOutsideAngular(() => {
+            this.countUp.update(this.endVal);
+          });
         }
-      });
+      }
     } else {
       this.initAndRun();
     }
   }
-
   animate(): void {
     this.zone.runOutsideAngular(() => {
       this.countUp.reset();
