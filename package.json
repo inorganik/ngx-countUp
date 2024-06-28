@@ -10,7 +10,7 @@
     "build:countup": "ng-packagr -p projects/count-up/ng-package.json",
     "pack:countup": "cd dist/count-up && npm pack && cd ../..",
     "package:countup": "npm run build:countup && npm run pack:countup",
-    "install-tarball": "npm i ./dist/count-up/ngx-countup-13.1.0.tgz",
+    "install-tarball": "npm i ./dist/count-up/ngx-countup-13.2.0.tgz",
     "all": "npm run package:countup && npm run install-tarball",
     "reset:countup": "npm remove ngx-countUp",
     "test": "ng test",
