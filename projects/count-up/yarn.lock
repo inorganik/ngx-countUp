@@ -2,40 +2,10 @@
 # yarn lockfile v1
 
 
-"@angular/common@>=13.0.0":
-  "integrity" "sha512-yLDQihiRcVl38HrWMPbqgzOaSUw85AQH5BsGdjbS6BpoBQj3EXOpccCMFsuxOKxPG4toatgawNqrEnK0Jpv9Mw=="
-  "resolved" "https://registry.npmjs.org/@angular/common/-/common-15.2.8.tgz"
-  "version" "15.2.8"
-  dependencies:
-    "tslib" "^2.3.0"
+countup.js@^2.3.2:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.9.0.tgz#599e6482e502e5e3f00f8816637120c9b21856ed"
 
-"@angular/core@>=13.0.0", "@angular/core@15.2.8":
-  "integrity" "sha512-NDs+g4uM4EhyCvluf8a0YBCFXsDAEfCMHOD5cS00Bl+liTQ7JwtmepkWXMyjLB92irC9JaR79kdy4BoIKOh8WA=="
-  "resolved" "https://registry.npmjs.org/@angular/core/-/core-15.2.8.tgz"
-  "version" "15.2.8"
-  dependencies:
-    "tslib" "^2.3.0"
-
-"countup.js@^2.6.1":
-  "integrity" "sha512-EK2CAi6TCGP7YVnb2iyaSNLF1RH00XQXX/TSYoy1tmM9n0uuU7Wa15VE0WRwptYLBEcwQjwuyT/IsIKBKt/KoQ=="
-  "resolved" "https://registry.npmjs.org/countup.js/-/countup.js-2.6.1.tgz"
-  "version" "2.6.1"
-
-"rxjs@^6.5.3 || ^7.4.0":
-  "integrity" "sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg=="
-  "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-7.8.1.tgz"
-  "version" "7.8.1"
-  dependencies:
-    "tslib" "^2.1.0"
-
-"tslib@^2.0.0", "tslib@^2.1.0", "tslib@^2.3.0":
-  "integrity" "sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg=="
-  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.5.0.tgz"
-  "version" "2.5.0"
-
-"zone.js@~0.11.4 || ~0.12.0 || ~0.13.0":
-  "integrity" "sha512-7m3hNNyswsdoDobCkYNAy5WiUulkMd3+fWaGT9ij6iq3Zr/IwJo4RMCYPSDjT+r7tnPErmY9sZpKhWQ8S5k6XQ=="
-  "resolved" "https://registry.npmjs.org/zone.js/-/zone.js-0.13.0.tgz"
-  "version" "0.13.0"
-  dependencies:
-    "tslib" "^2.3.0"
+tslib@^2.0.0:
+  version "2.5.0"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-2.5.0.tgz"
