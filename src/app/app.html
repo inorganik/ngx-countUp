@@ -2,8 +2,7 @@
 <p>Scroll down...</p>
 
 <div class="vertical-spacer"></div>
-<h1 [countUp]="endVal" [options]="opts" (complete)="doThisOnComplete()">0</h1>
-<!-- <h1 [countUp]="endVal2" [options]="opts" (complete)="doThisOnComplete()">0</h1> -->
+<h1 [countUp]="endVal" [countUpOptions]="opts" (complete)="doThisOnComplete()">0</h1>
 <label>Set the end value:</label>
 <input type="text" [(ngModel)]="pickANumber" style="display: block" />
 <button (click)="applyEndVal()">Apply</button>

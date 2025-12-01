@@ -6,7 +6,13 @@ This is an Angular directive wrapper around the core functionality of CountUp wh
 
 Or see this angular version work by cloning this project and running `ng serve`.
 
-This module supports Angular 7 and newer. The CountUp module for Angular 1.x is [here](https://github.com/inorganik/countUp.js-angular1).
+## Compatibility
+
+| Angular version | ngx-countup version | API Changes                                 |
+| --------------- | ------------------- | ------------------------------------------- |
+| 21              | 14                  | `options` input renamed to `countUpOptions` |
+| 13-20           | 13.2.0              | -                                           |
+| 7-12            | 7.3.3               | -                                           |
 
 Contents:
 
@@ -23,25 +29,25 @@ Install the package in your project. For **Angular 13** and newer:
 
 If you are using an **older version of Angular**, use the following:
 
-`npm i ngx-countup@7`
+`npm i ngx-countup@13`
 
 ---
 
-In `app.module.ts`, import the module in your Angular module, or component if you are using standalone:
+In your component, import the directive:
 
 ```ts
-import { CountUpModule } from 'ngx-countup';
+import { CountUpDirective } from 'ngx-countup';
 
-@NgModule({
+@Component({
+  selector: 'app-some-component',
   imports: [
-    ...
-    CountUpModule
+    CountUpDirective
   ],
   ...
 })
 ```
 
-Use it in your markup. Since it's a directive, it can be added to any element:
+Use it in your template. Since it's a directive, it can be added to any element:
 
 ```html
 <h1 [countUp]="345" (complete)="doSomethingOnComplete()">0</h1>
@@ -50,7 +56,7 @@ Use it in your markup. Since it's a directive, it can be added to any element:
 Inputs:
 
 - `countUp`: number to count to
-- `options`: [CountUpOptions](https://github.com/inorganik/countUp.js#options) - fine-grain control over CountUp
+- `countUpOptions`: [CountUpOptions](https://github.com/inorganik/countUp.js#options) - fine-grain control over CountUp
 - `reanimateOnClick`: pass false to disable (defaults to true)
 
 Outputs:
@@ -62,7 +68,7 @@ Outputs:
 Scroll spy means it will automatically start animating when the CountUp element scrolls into view. Enable it in the options:
 
 ```html
-<h1 [countUp]="myEndVal" [options]="{ enableScrollSpy: true }">0</h1>
+<h1 [countUp]="myEndVal" [countUpOptions]="{ enableScrollSpy: true }">0</h1>
 ```
 
 ### Defer animation
@@ -70,7 +76,7 @@ Scroll spy means it will automatically start animating when the CountUp element 
 Bind [countUp] to some property. Leave `myEndVal` undefined and the animation won't start until `myEndVal` has a value.
 
 ```html
-<h1 [countUp]="myEndVal" [options]="myOpts">0</h1>
+<h1 [countUp]="myEndVal" [countUpOptions]="myOpts">0</h1>
 ```
 
 ### Re-animate
@@ -78,7 +84,7 @@ Bind [countUp] to some property. Leave `myEndVal` undefined and the animation wo
 To re-animate CountUp programmatically, add a template ref variable to the markup (with #):
 
 ```html
-<h1 #countUp [countUp]="myEndVal" [options]="myOpts">0</h1>
+<h1 #countUp [countUp]="myEndVal" [countUpOptions]="myOpts">0</h1>
 ```
 
 Then, select it with `@ViewChild` in your component's Typescript file (using the template ref # you created).
@@ -95,29 +101,9 @@ this.countUp.animate();
 
 Remember to do this inside `ngAfterViewInit()` to do something on component load.
 
-## Angular Universal
-
-Yes, this component works with SSR and prerendering!
-
-## Testing
-
-The test app in this repo has a passing test for a component that uses the CountUp directive, which you can use as an example. If your component uses the CountUp directive, include the CountUpModule in your TestBed:
-
-```
-beforeEach(async(() => {
-  TestBed.configureTestingModule({
-    imports: [
-      CountUpModule,
-      ...
-    ],
-    ...
-  })
-});
-```
-
 ## Contributing
 
 Before you make a pull request, please follow these instructions:
 
-1. Make your edits to `./projects/count-up/src/lib/count-up.directive.ts`.
+1. Make your edits to `./projects/ngx-countup/src/lib/ngx-countup.directive.ts`.
 1. Run `npm start` and test your changes in the demo app.

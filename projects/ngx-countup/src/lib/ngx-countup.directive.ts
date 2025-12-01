@@ -29,7 +29,7 @@ export class CountUpDirective implements OnChanges {
   // the value you want to count to
   endVal = input.required<number>({ alias: 'countUp' });
 
-  options = input<CountUpOptions>({});
+  countUpOptions = input<CountUpOptions>({});
 
   reanimateOnClick = input(true);
 
@@ -57,7 +57,7 @@ export class CountUpDirective implements OnChanges {
           this.initAndRun();
         } else {
           // Only endVal has changed, update with current options
-          const currentOptions = this.options();
+          const currentOptions = this.countUpOptions();
           if (!currentOptions.startVal) {
             currentOptions.startVal = this.countUp.frameVal;
           }
@@ -84,8 +84,8 @@ export class CountUpDirective implements OnChanges {
 
   private initAndRun(): void {
     this.zone.runOutsideAngular(() => {
-      this.countUp = new CountUp(this.el.nativeElement, this.endVal(), this.options());
-      if (!this.options().enableScrollSpy) {
+      this.countUp = new CountUp(this.el.nativeElement, this.endVal(), this.countUpOptions());
+      if (!this.countUpOptions().enableScrollSpy) {
         this.animate();
       }
     });
