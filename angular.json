@@ -74,6 +74,58 @@
           "builder": "@angular/build:unit-test"
         }
       }
+    },
+    "ngx-countup": {
+      "projectType": "library",
+      "root": "projects/ngx-countup",
+      "sourceRoot": "projects/ngx-countup/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-countup/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-countup/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/ngx-countup/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "count-up": {
+      "projectType": "library",
+      "root": "projects/count-up",
+      "sourceRoot": "projects/count-up/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/count-up/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/count-up/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/count-up/tsconfig.spec.json"
+          }
+        }
+      }
     }
   }
 }

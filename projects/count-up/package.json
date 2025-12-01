@@ -1,0 +1,25 @@
+{
+  "name": "ngx-countup",
+  "version": "14.0.0",
+  "description": "Animates a numerical value by counting to it.",
+  "author": "@inorganik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inorganik/ngx-countUp/issues"
+  },
+  "homepage": "http://inorganik.github.io/countUp.js",
+  "keywords": [
+    "UI",
+    "animation",
+    "angular"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "countup.js": "^2.9.0"
+  },
+  "sideEffects": false
+}

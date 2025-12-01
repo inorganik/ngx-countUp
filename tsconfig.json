@@ -7,6 +7,14 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "count-up": [
+        "./dist/count-up"
+      ],
+      "ngx-countup": [
+        "./dist/ngx-countup"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -28,6 +36,18 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/ngx-countup/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-countup/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/count-up/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/count-up/tsconfig.spec.json"
     }
   ]
 }
