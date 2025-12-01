@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-countUp": {
+    "test-ngx-countUp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -25,9 +25,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -62,10 +60,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ngx-countUp:build:production"
+              "buildTarget": "test-ngx-countUp:build:production"
             },
             "development": {
-              "buildTarget": "ngx-countUp:build:development"
+              "buildTarget": "test-ngx-countUp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,32 +95,6 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/ngx-countup/tsconfig.spec.json"
-          }
-        }
-      }
-    },
-    "count-up": {
-      "projectType": "library",
-      "root": "projects/count-up",
-      "sourceRoot": "projects/count-up/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:ng-packagr",
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/count-up/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/count-up/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular/build:unit-test",
-          "options": {
-            "tsConfig": "projects/count-up/tsconfig.spec.json"
           }
         }
       }

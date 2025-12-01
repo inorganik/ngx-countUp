@@ -2,47 +2,45 @@ import { isPlatformBrowser } from '@angular/common';
 import {
   Directive,
   ElementRef,
-  EventEmitter,
-  HostListener,
-  Inject,
-  Input,
   NgZone,
   OnChanges,
-  Output,
   PLATFORM_ID,
   SimpleChanges,
+  inject,
+  input,
+  output,
 } from '@angular/core';
 import { CountUp, CountUpOptions } from 'countup.js';
 
 @Directive({
   selector: '[countUp]',
+  host: {
+    '(click)': 'onClick()',
+  },
   standalone: true,
 })
 export class CountUpDirective implements OnChanges {
+  private el = inject(ElementRef);
+  private zone = inject(NgZone);
+  private platformId = inject(PLATFORM_ID);
+
   countUp!: CountUp;
 
   // the value you want to count to
-  @Input('countUp') endVal!: number;
+  endVal = input.required<number>({ alias: 'countUp' });
 
-  @Input() options: CountUpOptions = {};
+  options = input<CountUpOptions>({});
 
-  @Input() reanimateOnClick = true;
+  reanimateOnClick = input(true);
 
-  @Output() complete = new EventEmitter<void>();
+  complete = output<void>();
 
   // Re-animate if preference is set.
-  @HostListener('click')
   onClick() {
-    if (this.reanimateOnClick) {
+    if (this.reanimateOnClick()) {
       this.animate();
     }
   }
-
-  constructor(
-    private el: ElementRef,
-    private zone: NgZone,
-    @Inject(PLATFORM_ID) private platformId: Object,
-  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     // don't animate server-side
@@ -59,11 +57,12 @@ export class CountUpDirective implements OnChanges {
           this.initAndRun();
         } else {
           // Only endVal has changed, update with current options
-          if (!this.options.startVal) {
-            this.options.startVal = this.countUp.frameVal;
+          const currentOptions = this.options();
+          if (!currentOptions.startVal) {
+            currentOptions.startVal = this.countUp.frameVal;
           }
           this.zone.runOutsideAngular(() => {
-            this.countUp.update(this.endVal);
+            this.countUp.update(this.endVal());
           });
         }
       }
@@ -85,8 +84,8 @@ export class CountUpDirective implements OnChanges {
 
   private initAndRun(): void {
     this.zone.runOutsideAngular(() => {
-      this.countUp = new CountUp(this.el.nativeElement, this.endVal, this.options);
-      if (!this.options.enableScrollSpy) {
+      this.countUp = new CountUp(this.el.nativeElement, this.endVal(), this.options());
+      if (!this.options().enableScrollSpy) {
         this.animate();
       }
     });

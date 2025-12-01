@@ -5,7 +5,7 @@
 To build the library, run:
 
 ```bash
-ng build count-up
+ng build ngx-countup
 ```
 
 This command will compile your project, and the build artifacts will be placed in the `dist/` directory.

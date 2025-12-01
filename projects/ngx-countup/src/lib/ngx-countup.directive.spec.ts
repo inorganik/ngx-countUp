@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CountUpDirective } from './count-up.directive';
+import { CountUpDirective } from './ngx-countup.directive';
 
 describe('CountUpDirective', () => {
   let component: CountUpDirective;

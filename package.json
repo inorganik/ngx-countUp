@@ -7,7 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:ngx-countUp": "node dist/ngx-countUp/server/server.mjs"
+    "serve:ssr:ngx-countUp": "node dist/test-ngx-countUp/server/server.mjs",
+    "build:countup": "ng-packagr -p projects/ngx-countup/ng-package.json",
+    "pack:countup": "cd dist/ngx-countup && npm pack && cd ../..",
+    "package:countup": "npm run build:countup && npm run pack:countup",
+    "install-tarball": "npm i ./dist/ngx-countup/ngx-countup-13.2.0.tgz"
   },
   "prettier": {
     "printWidth": 100,
