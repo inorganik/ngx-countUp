@@ -8,11 +8,11 @@ Or see this angular version work by cloning this project and running `ng serve`.
 
 ## Compatibility
 
-| Angular version | ngx-countup version | API Changes                                 |
-| --------------- | ------------------- | ------------------------------------------- |
-| 21              | 14                  | `options` input renamed to `countUpOptions` |
-| 13-20           | 13.2.0              | -                                           |
-| 7-12            | 7.3.3               | -                                           |
+| Angular version | ngx-countup version | API Changes                            |
+| --------------- | ------------------- | -------------------------------------- |
+| 21+             | 21                  | Use `countUpOptions` input for options |
+| 13-20           | 13.2.0              | Use `options` input for options        |
+| 7-12            | 7.3.3               | -                                      |
 
 Contents:
 
@@ -106,4 +106,6 @@ Remember to do this inside `ngAfterViewInit()` to do something on component load
 Before you make a pull request, please follow these instructions:
 
 1. Make your edits to `./projects/ngx-countup/src/lib/ngx-countup.directive.ts`.
-1. Run `npm start` and test your changes in the demo app.
+1. Build the lib: `npm run build:countup`
+1. Test your changes in the demo app: `npm start`
+1. Ensure tests pass: `npm t -- ngx-countup`

@@ -1,6 +1,6 @@
 {
   "name": "ngx-countup",
-  "version": "14.0.0",
+  "version": "21.0.0",
   "description": "Animates a numerical value by counting to it.",
   "author": "@inorganik",
   "license": "MIT",
