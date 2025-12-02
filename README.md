@@ -17,13 +17,11 @@ Or see this angular version work by cloning this project and running `ng serve`.
 Contents:
 
 - [Usage](#usage)
-- [Angular Universal](#angular-universal)
-- [Testing](#testing)
 - [Contributing](#contributing)
 
 ## Usage
 
-Install the package in your project. For **Angular 13** and newer:
+Install the package in your project. For **Angular 21** and newer:
 
 `npm i ngx-countup`
 
@@ -49,13 +47,15 @@ Use it in your template. Since it's a directive, it can be added to any element:
 <h1 [countUp]="345">0</h1>
 ```
 
-Inputs:
+Note: The component is safe for server side rendering.
+
+**Inputs:**
 
 - `countUp`: number to count to
 - `countUpOptions`: [CountUpOptions](https://github.com/inorganik/countUp.js#options) - fine-grain control over CountUp
 - `reanimateOnClick`: pass false to disable (defaults to true)
 
-Outputs:
+**Outputs:**
 
 - `complete`: emits when the animation completes
 
