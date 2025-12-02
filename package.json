@@ -1,60 +1,57 @@
 {
-  "name": "test-count-up",
-  "description": "This is just a test app - see projects/count-up/package.json",
+  "name": "ngx-count-up",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build -c production",
-    "serve:prod": "ng serve -c production",
-    "build:countup": "ng-packagr -p projects/count-up/ng-package.json",
-    "pack:countup": "cd dist/count-up && npm pack && cd ../..",
-    "package:countup": "npm run build:countup && npm run pack:countup",
-    "install-tarball": "npm i ./dist/count-up/ngx-countup-13.2.0.tgz",
-    "all": "npm run package:countup && npm run install-tarball",
-    "reset:countup": "npm remove ngx-countUp",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint",
-    "test:watch": "ng test --watch"
+    "serve:ssr:ngx-countUp": "node dist/test-ngx-countUp/server/server.mjs",
+    "build:countup": "ng build ngx-countup"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
   },
   "private": true,
+  "packageManager": "npm@10.9.4",
   "dependencies": {
-    "@angular/common": "^13.2.7",
-    "@angular/compiler": "^13.2.7",
-    "@angular/core": "^13.2.7",
-    "@angular/forms": "^13.2.7",
-    "@angular/platform-browser": "^13.2.7",
-    "@angular/platform-browser-dynamic": "^13.2.7",
-    "@angular/router": "^13.2.7",
-    "countup.js": "^2.3.2",
-    "rxjs": "^6.6.7",
-    "zone.js": "^0.11.8"
+    "@angular/common": "^21.0.0",
+    "@angular/compiler": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0",
+    "@angular/platform-server": "^21.0.0",
+    "@angular/router": "^21.0.0",
+    "@angular/ssr": "^21.0.1",
+    "countup.js": "^2.9.0",
+    "express": "^5.1.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.2.21",
-    "@angular-eslint/builder": "13.0.1",
-    "@angular-eslint/eslint-plugin": "13.0.1",
-    "@angular-eslint/eslint-plugin-template": "13.0.1",
-    "@angular-eslint/schematics": "20.1.1",
-    "@angular-eslint/template-parser": "13.0.1",
-    "@angular/cli": "^20.1.4",
-    "@angular/compiler-cli": "^13.2.7",
-    "@angular/language-service": "^13.2.7",
-    "@types/jasmine": "^3.10.6",
-    "@types/jasminewd2": "~2.0.10",
-    "@types/node": "^17.0.45",
-    "@typescript-eslint/eslint-plugin": "5.11.0",
-    "@typescript-eslint/parser": "5.11.0",
-    "eslint": "^8.28.0",
-    "jasmine-core": "^4.0.1",
-    "jasmine-spec-reporter": "~7.0.0",
-    "karma": "^6.4.1",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-coverage": "^2.2.0",
-    "karma-jasmine": "^5.1.0",
-    "karma-spec-reporter": "0.0.34",
-    "ng-packagr": "^13.3.1",
-    "ts-node": "~10.5.0",
-    "typescript": "~4.5.5"
+    "@angular/build": "^21.0.1",
+    "@angular/cli": "^21.0.1",
+    "@angular/compiler-cli": "^21.0.0",
+    "@tailwindcss/postcss": "^4.1.12",
+    "@types/express": "^5.0.1",
+    "@types/node": "^20.17.19",
+    "daisyui": "^5.5.5",
+    "jsdom": "^27.1.0",
+    "ng-packagr": "^21.0.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.7.3",
+    "tailwindcss": "^4.1.12",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
   }
 }

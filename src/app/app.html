@@ -1,0 +1,27 @@
+<div class="container mx-auto my-12">
+  <h1 class="text-6xl">CountUp Angular Demo</h1>
+  <p>Scroll down...</p>
+
+  <div class="vertical-spacer my-3"></div>
+  <h1
+    class="text-3xl mb-6"
+    [countUp]="endVal"
+    [countUpOptions]="opts"
+    (complete)="doThisOnComplete()"
+  >
+    0
+  </h1>
+  <label>Set the end value:</label>
+  <input class="block input mb-6" type="text" [(ngModel)]="pickANumber" />
+  <div class="flex gap-2">
+    <button class="btn" (click)="applyEndVal()">Apply</button>
+    <button class="btn" (click)="useOptions()">Test options change</button>
+    <button class="btn" (click)="useOptionsAndEndVal()">
+      Test simultaneous options and endval change
+    </button>
+    <button class="btn" (click)="resetOptions()">Reset options</button>
+  </div>
+
+  <div class="vertical-spacer my-3"></div>
+</div>
+<app-debug-change-detection class="fixed right-6 top-6 block" />

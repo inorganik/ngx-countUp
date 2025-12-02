@@ -1,143 +1,103 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "06189d47-af37-4a40-a422-d97b0f7dcc48"
-  },
   "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "analytics": "53154b62-b5b0-483e-b759-123ff8fbf717"
+  },
   "newProjectRoot": "projects",
   "projects": {
-    "test-count-up": {
+    "test-ngx-countUp": {
+      "projectType": "application",
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "projectType": "application",
       "prefix": "app",
-      "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/test-count-up",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
+            "styles": ["src/styles.css"],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
-              "fileReplacements": [
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "outputHashing": "all"
             },
-            "development": {}
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {},
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "test-count-up:build:production"
+              "buildTarget": "test-ngx-countUp:build:production"
             },
             "development": {
-              "browserTarget": "test-count-up:build:development"
+              "buildTarget": "test-ngx-countUp:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "test-count-up:build"
-          }
-        },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
-          }
+          "builder": "@angular/build:unit-test"
         }
       }
     },
-    "countUp": {
-      "root": "projects/count-up",
-      "sourceRoot": "projects/count-up/src",
+    "ngx-countup": {
       "projectType": "library",
+      "root": "projects/ngx-countup",
+      "sourceRoot": "projects/ngx-countup/src",
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "tsConfig": "projects/count-up/tsconfig.lib.json",
-            "project": "projects/count-up/ng-package.json"
-          },
+          "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "projects/count-up/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-countup/tsconfig.lib.prod.json"
             },
-            "development": {}
+            "development": {
+              "tsConfig": "projects/ngx-countup/tsconfig.lib.json"
+            }
           },
           "defaultConfiguration": "production"
         },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
+        "test": {
+          "builder": "@angular/build:unit-test",
           "options": {
-            "lintFilePatterns": [
-              "projects/count-up/**/*.ts",
-              "projects/count-up/**/*.html"
-            ]
+            "tsConfig": "projects/ngx-countup/tsconfig.spec.json"
           }
         }
       }
     }
-  },
-  "defaultProject": "test-count-up"
+  }
 }
