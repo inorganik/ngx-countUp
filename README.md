@@ -1,6 +1,6 @@
 # ngx-countup - CountUp.js in Angular
 
-This is an Angular directive wrapper around the core functionality of CountUp which is maintained in the [CountUp.js repo](https://github.com/inorganik/countUp.js). MIT License.
+This is an Angular directive wrapper around the core functionality of CountUp which is maintained in the [CountUp.js repo](https://github.com/inorganik/countUp.js) by the same author. MIT License.
 
 #### [CountUp.js demo](http://inorganik.github.io/countUp.js)
 
@@ -27,10 +27,6 @@ Install the package in your project. For **Angular 13** and newer:
 
 `npm i ngx-countup`
 
-If you are using an **older version of Angular**, use the following:
-
-`npm i ngx-countup@13`
-
 ---
 
 In your component, import the directive:
@@ -50,7 +46,7 @@ import { CountUpDirective } from 'ngx-countup';
 Use it in your template. Since it's a directive, it can be added to any element:
 
 ```html
-<h1 [countUp]="345" (complete)="doSomethingOnComplete()">0</h1>
+<h1 [countUp]="345">0</h1>
 ```
 
 Inputs:
@@ -73,10 +69,10 @@ Scroll spy means it will automatically start animating when the CountUp element 
 
 ### Defer animation
 
-Bind [countUp] to some property. Leave `myEndVal` undefined and the animation won't start until `myEndVal` has a value.
+You can defer animation by leaving the property holding the end value undefined. So for instance, you could declare `myEndVal` in your component and the animation won't start until `myEndVal` has a value.
 
 ```html
-<h1 [countUp]="myEndVal" [countUpOptions]="myOpts">0</h1>
+<h1 [countUp]="myEndVal" [countUpOptions]="options">0</h1>
 ```
 
 ### Re-animate
