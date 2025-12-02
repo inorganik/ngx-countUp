@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 
 import { CountUpOptions } from 'countup.js';
 import { CountUpDirective } from 'ngx-countup';
+import { DebugChangeDetectionComponent } from './debug-change-detection.component';
 
 @Component({
   selector: 'app-root',
-  imports: [CountUpDirective, FormsModule],
+  imports: [CountUpDirective, FormsModule, DebugChangeDetectionComponent],
   templateUrl: './app.html',
   styles: `
     .vertical-spacer {

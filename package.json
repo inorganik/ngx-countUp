@@ -48,6 +48,7 @@
     "@tailwindcss/postcss": "^4.1.12",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
+    "daisyui": "^5.5.5",
     "jsdom": "^27.1.0",
     "ng-packagr": "^21.0.0",
     "postcss": "^8.5.3",
