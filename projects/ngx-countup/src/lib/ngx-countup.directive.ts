@@ -48,12 +48,12 @@ export class CountUpDirective implements OnChanges {
       return;
     }
 
-    const { options, endVal } = changes;
+    const { countUpOptions, endVal } = changes;
 
     if (this.countUp) {
-      if (options?.currentValue !== undefined || endVal?.currentValue !== undefined) {
+      if (countUpOptions?.currentValue !== undefined || endVal?.currentValue !== undefined) {
         // If options have changed, reinitialize
-        if (options?.currentValue !== undefined) {
+        if (countUpOptions?.currentValue !== undefined) {
           this.initAndRun();
         } else {
           // Only endVal has changed, update with current options

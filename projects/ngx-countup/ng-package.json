@@ -3,5 +3,6 @@
   "dest": "../../dist/ngx-countup",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["countup.js"]
 }
