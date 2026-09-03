@@ -5,6 +5,36 @@ updates:
     schedule:
       interval: 'quarterly'
     groups:
+      # Angular packages share exact peer versions and must bump together.
+      # Listed first so they are not swallowed by the catch-all group.
+      angular:
+        applies-to: version-updates
+        patterns:
+          - '@angular*'
+          - 'ng-packagr'
+        update-types:
+          - 'minor'
+          - 'patch'
       all:
+        applies-to: version-updates
         patterns:
           - '*'
+        exclude-patterns:
+          - '@angular*'
+          - 'ng-packagr'
+        update-types:
+          - 'minor'
+          - 'patch'
+      # Security updates ignore version-update groups unless grouped separately.
+      angular-security:
+        applies-to: security-updates
+        patterns:
+          - '@angular*'
+          - 'ng-packagr'
+      all-security:
+        applies-to: security-updates
+        patterns:
+          - '*'
+        exclude-patterns:
+          - '@angular*'
+          - 'ng-packagr'
