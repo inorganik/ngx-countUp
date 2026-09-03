@@ -4,6 +4,12 @@ updates:
     directory: '/'
     schedule:
       interval: 'quarterly'
+    # Majors still open as ungrouped PRs unless ignored. Angular/TS majors
+    # need ng update, not a Dependabot bump.
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - 'version-update:semver-major'
     groups:
       # Angular packages share exact peer versions and must bump together.
       # Listed first so they are not swallowed by the catch-all group.
@@ -31,6 +37,9 @@ updates:
         patterns:
           - '@angular*'
           - 'ng-packagr'
+        update-types:
+          - 'minor'
+          - 'patch'
       all-security:
         applies-to: security-updates
         patterns:
@@ -38,3 +47,6 @@ updates:
         exclude-patterns:
           - '@angular*'
           - 'ng-packagr'
+        update-types:
+          - 'minor'
+          - 'patch'
